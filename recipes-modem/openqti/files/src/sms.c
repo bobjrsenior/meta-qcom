@@ -2097,12 +2097,13 @@ uint8_t intercept_cb_message(void *bytes, size_t len) {
       dump_pkt_raw(bytes, len);
       logger(MSG_DEBUG, "%s: CB MESSAGE DUMP END\n", __func__);
       set_log_level(MSG_INFO);
-      if ((pkt->message.pdu.page_param >> 4) == 0x01)
+      /*if ((pkt->message.pdu.page_param >> 4) == 0x01)
         add_message_to_queue(
             (uint8_t
                  *)"WARNING: Incoming Cell Broadcast Message from the network",
             strlen(
                 "WARNING: Incoming Cell Broadcast Message from the network"));
+      */
       /*
        * Just in case someone looks at this code looking for hints on something
        * else: If the upper bits of the encoding u8 are 01XX, it means that the
